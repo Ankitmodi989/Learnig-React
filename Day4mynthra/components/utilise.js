@@ -1,0 +1,18 @@
+ const arr=[{item:"Tshirt",offer:"20-40% off",range:"200-500",price:200},
+       {item:"pant",offer:"20-30% off",range:"200-400",price:200},
+       {item:"lower",offer:"20-40% off",range:"100-500",price:2000},
+       {item:"jacket",offer:"70-80% off",range:"150-600",price:2300},
+       {item:"inner",offer:"30-40% off",range:"200-1000",price:600},
+       {item:"kurtas",offer:"35-40% off",range:"200-800",price:300},
+       {item:"saries",offer:"15-40% off",range:"200-900",price:100},
+       {item:"land",offer:"20-60% off",range:"200-700",price:2700},
+       {item:"traoser",offer:"70-90% off",range:"200-600",price:1000},
+       {item:"Tshirt",offer:"0-20% off",range:"200-300",price:500},
+       {item:"halfpant",offer:"20-50% off",range:"100-200",price:800},
+       {item:"mood",offer:"20-65% off",range:"200-2000",price:350},
+       {item:"lahnga",offer:"20-85% off",range:"200-5000",price:400},
+       {item:"Tshirt",offer:"20-40% off",range:"500-1000",price:700},
+       {item:"chaddi",offer:"20-55% off",range:"700-5000",price:900},
+       {item:"bra",offer:"20-35% off",range:"2000-5000",price:250},
+ ]
+ export default arr;
