@@ -1,0 +1,14 @@
+Redux is a state management library used mostly with React to manage and share data across your entire app in a clean and predictable way.
+it provide a global access help to avoid prop drilling
+Redux helps ot store data in one central place called redux store
+
+/**************************************************/
+
+redux is fast as compare to context api
+in Contetx Api => when state change all component re-render
+In Redux => Only specific component update
+
+IN context api each and every state store independently
+IN redux store there is a single state object in which each state is store 
+
+In react we upadate state in non mutating way because raect reader change when there is change in there object if there is no change in object then it will not render in page but update in console
