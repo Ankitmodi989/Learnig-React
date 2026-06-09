@@ -8,25 +8,14 @@ const wishListReducer = (state = initialstate, action) => {
 
   switch (action.type) {
     case WISHLIST_ADD_ITEM:
-      if (
-        state.wishList.some(
-          item => item.productId === action.payload.productId
-        )
-      ) {
-        return state;
-      }
-      return {
+      return [
         ...state,
-        wishList: [
-          ...state.wishList,
-          { productId: action.payload.productId }
-        ]
-      }
+        action.payload
+      ]
     case WISHLIST_REMOVE_ITEM:
-      return {
-        ...state, wishList: state.wishList.filter((whishlist) => whishlist.productId !== action.payload.productId
-        )
-      }
+      return state.filter((whishlist) => whishlist.productId !== action.payload.productId
+      )
+
     default:
       return state
 

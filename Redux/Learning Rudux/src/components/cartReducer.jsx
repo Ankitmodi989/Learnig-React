@@ -11,27 +11,24 @@ const cartReducer = (state = initialstate, action) => {
 
   switch (action.type) {
     case CART_ADD_ITEM:
-      return { ...state, cartitem: [...state.cartitem, action.payload] }
+      return [...state, action.payload]
     case CART_REMOVE_ITEM:
-      return { ...state, cartitem: state.cartitem.filter((cartitm) => cartitm.productId !== action.payload.productId) }
+      return state.filter((cartitm) => cartitm.productId !== action.payload.productId)
     case CART_ITEM_INCREASE_QUANTITY:
-      return {
-        ...state, cartitem: state.cartitem.map((cartItem) => {
-          if (cartItem.productId === action.payload.productId) {
-            return { ...cartItem, count: cartItem.count + 1 }
-          }
-          return cartItem;
-        })
-      }
+      return state.map((cartItem) => {
+        if (cartItem.productId === action.payload.productId) {
+          return { ...cartItem, count: cartItem.count + 1 }
+        }
+        return cartItem;
+      })
     case CART_ITEM_DECREASE_QUANTITY:
-      return {
-        ...state, cartitem: state.cartitem.map((cartItem) => {
-          if (cartItem.productId === action.payload.productId) {
-            return { ...cartItem, count: cartItem.count - 1 }
-          }
-          return cartItem
-        })
-      }
+      return state.map((cartItem) => {
+        if (cartItem.productId === action.payload.productId) {
+          return { ...cartItem, count: cartItem.count - 1 }
+        }
+        return cartItem
+      })
+        .filter((cartItem) => cartItem.count > 0)
     default:
       return state
 
