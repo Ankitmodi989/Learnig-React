@@ -1,8 +1,16 @@
 import React from 'react'
-export const WISHLIST_ADD_ITEM = 'wishList/addItem'
-export const WISHLIST_REMOVE_ITEM = 'wishList/removeItem'
+const WISHLIST_ADD_ITEM = 'wishList/addItem'
+const WISHLIST_REMOVE_ITEM = 'wishList/removeItem'
 
 const initialstate = [];
+
+export function addWishListItem(productId) {
+  return { type: WISHLIST_ADD_ITEM, payload: { productId } }
+}
+export function removeWishListItem(productId) {
+  return { type: WISHLIST_REMOVE_ITEM, payload: { productId } }
+}
+
 
 const wishListReducer = (state = initialstate, action) => {
 

@@ -3,14 +3,31 @@ import { combineReducers, createStore } from 'redux';
 
 import { productlist } from './productList'
 import ProReducer from './ProReducer';
-import cartReducer, { CART_ADD_ITEM, CART_ITEM_INCREASE_QUANTITY, CART_REMOVE_ITEM } from './cartReducer';
-import wishListReducer, { WISHLIST_ADD_ITEM, WISHLIST_REMOVE_ITEM } from './wishListReducer';
+import cartReducer, { addCartItem, decreaseCartItemQuantity, increaseCartItemQuantity } from './cartReducer';
+import wishListReducer, { addWishListItem, removeWishListItem } from './wishListReducer';
 
+// function combineReducers(reducers) {
+//   const reducerKeys = Object.keys(reducers)
+
+//   return function (state = {}, action) {
+//     const nextState = {}
+
+//     for (let i = 0; i < reducerKeys.length; i++) {
+//       const key = reducerKeys[i]
+//       const reducer = reducers[key]
+//       const previousStateForKey = state[key]
+//       const nextStateForKey = reducer(previousStateForKey, action)
+//       nextState[key] = nextStateForKey
+//     }
+
+//     return nextState
+//   }
+// }
 
 const reducer = combineReducers({
-    products : ProReducer,
+    products: ProReducer,
     cartitem: cartReducer,
-    wishlist : wishListReducer
+    wishlist: wishListReducer
 })
 // const initialstate = {
 //     products: productlist,
@@ -74,19 +91,19 @@ const ProductReducer = () => {
     const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
     console.log(store);
 
-    store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 1, count: 1 } });
-    store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 12, count: 1 } });
-    store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 5, count: 1 } });
-    store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 7, count: 1 } });
-    store.dispatch({ type: CART_ADD_ITEM, payload: { productId: 9, count: 1 } });
-    store.dispatch({ type: CART_REMOVE_ITEM, payload: { productId: 1 } });
-    store.dispatch({ type: CART_ITEM_INCREASE_QUANTITY, payload: { productId: 12 } });
-    // store.dispatch({ type: CART_ITEM_INCREASE_QUANTITY, payload: { productId: 12 } });
-    store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 5 } });
-    store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 12 } });
-    store.dispatch({ type: WISHLIST_ADD_ITEM, payload: { productId: 1 } });
-    store.dispatch({ type: WISHLIST_REMOVE_ITEM, payload: { productId: 1 } });
+    store.dispatch(addCartItem(1))
+    store.dispatch(addCartItem(12))
 
+    store.dispatch(increaseCartItemQuantity(12))
+
+    store.dispatch(decreaseCartItemQuantity(12))
+    store.dispatch(decreaseCartItemQuantity(12))
+
+    store.dispatch(addWishListItem(18))
+    store.dispatch(addWishListItem(11))
+
+    store.dispatch(removeWishListItem(11))
+    store.dispatch(removeWishListItem(18))
 
 
     return (
