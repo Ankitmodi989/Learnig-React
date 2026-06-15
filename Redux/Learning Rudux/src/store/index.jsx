@@ -85,30 +85,30 @@ const reducer = combineReducers({
 //     }
 // }
 
-const ProductReducer = () => {
+// const ProductReducer = () => {
 
 
-    const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+    export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
     console.log(store);
 
-    store.dispatch(addCartItem(1))
-    store.dispatch(addCartItem(12))
+//     store.dispatch(addCartItem(1))
+//     store.dispatch(addCartItem(12))
 
-    store.dispatch(increaseCartItemQuantity(12))
+//     store.dispatch(increaseCartItemQuantity(12))
 
-    store.dispatch(decreaseCartItemQuantity(12))
-    store.dispatch(decreaseCartItemQuantity(12))
+//     store.dispatch(decreaseCartItemQuantity(12))
+//     store.dispatch(decreaseCartItemQuantity(12))
 
-    store.dispatch(addWishListItem(18))
-    store.dispatch(addWishListItem(11))
+//     store.dispatch(addWishListItem(18))
+//     store.dispatch(addWishListItem(11))
 
-    store.dispatch(removeWishListItem(11))
-    store.dispatch(removeWishListItem(18))
+//     store.dispatch(removeWishListItem(11))
+//     store.dispatch(removeWishListItem(18))
 
 
-    return (
-        <div>productReduce</div>
-    )
-}
+//     return (
+//         <div>productReduce</div>
+//     )
+// }
 
-export default ProductReducer
+// export default ProductReducer

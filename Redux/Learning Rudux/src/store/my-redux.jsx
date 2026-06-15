@@ -21,8 +21,8 @@ export const myCreateStore = (reducer) => {
             };
         },
     };
-     store.dispatch({ type: '@@INIT' });
+    store.dispatch({ type: '@@INIT' });
 
-     return store;
+    return store;
 
 }

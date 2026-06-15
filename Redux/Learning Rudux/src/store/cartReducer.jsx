@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Action type 
  const CART_ADD_ITEM = 'cart/addItem'
  const CART_REMOVE_ITEM = 'cart/removeItem'
  const CART_ITEM_INCREASE_QUANTITY = 'cart/increaseItemQuantity'
@@ -31,7 +32,7 @@ export function increaseCartItemQuantity(productId) {
 }
 
 
-
+// Action reducer
 const cartReducer = (state = initialstate, action) => {
 
   switch (action.type) {

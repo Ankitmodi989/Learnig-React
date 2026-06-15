@@ -1,16 +1,18 @@
+import React from 'react'
 import './App.css'
-import Script from './components/Script'
-import ProductReducer from './components/productReducer'
+import Header from './components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
 
-
-function App() {
-
+export default function App() {
   return (
-    <div className="">
-      <ProductReducer></ProductReducer>
-      {/* <h1>hello</h1> */}
-    </div>
+    <BrowserRouter>
+    <Header></Header>
+    <Routes>
+      <Route path='/' element={<Home/>}></Route>
+      <Route path='/cart' element={<Cart></Cart>}></Route>
+    </Routes>
+    </BrowserRouter>
   )
 }
-
-export default App
