@@ -5,7 +5,7 @@ import cart_icon from '../assets/cart-icon.svg'
 import { useSelector } from 'react-redux'
 
 export default function Header() {
-  const cartItems = useSelector((state) => state.cartItems)
+  const cartItems = useSelector((state) => state.cartitem)
   console.log(cartItems)
   return (
     <header>
@@ -14,13 +14,13 @@ export default function Header() {
           <Link to="/">Shopee</Link>
         </h1>
         <Link className="cart-icon" to="/cart">
-          <img src="cart_icon" alt="count" /> 0
-          {/* <div className="cart-items-count"> */}
-            {/* {cartItems.reduce(
+          <img src={cart_icon} alt="count" />
+          <div className="cart-items-count">
+            {cartItems.reduce(
               (accumulator, currentItem) => accumulator + currentItem.quantity,
               0
-            )} */}
-          {/* </div> */}
+            )} 
+          </div>
         </Link>
       </div>
     </header>

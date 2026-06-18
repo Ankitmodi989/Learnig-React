@@ -1,5 +1,4 @@
 import React from 'react'
-// import CartItem from '../components/CartItem'
 import { useSelector } from 'react-redux'
 import CartItem from '../components/Carditem'
 
@@ -32,14 +31,14 @@ export default function Cart() {
           <div></div>
           <div></div>
           <div></div>
-          {/* <div className="total">
+          <div className="total">
             $
             {cartItems.reduce(
               (accumulator, currentItem) =>
                 accumulator + currentItem.quantity * currentItem.price,
               0
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
