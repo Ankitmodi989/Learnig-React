@@ -5,6 +5,7 @@ import { productlist } from './productList'
 import ProReducer from './ProReducer';
 import cartReducer, { addCartItem, decreaseCartItemQuantity, increaseCartItemQuantity } from './cartReducer';
 import wishListReducer, { addWishListItem, removeWishListItem } from './wishListReducer';
+import { configureStore } from '@reduxjs/toolkit';
 
 // function combineReducers(reducers) {
 //   const reducerKeys = Object.keys(reducers)
@@ -24,11 +25,11 @@ import wishListReducer, { addWishListItem, removeWishListItem } from './wishList
 //   }
 // }
 
-const reducer = combineReducers({
-    products: ProReducer,
-    cartitem: cartReducer,
-    wishlist: wishListReducer
-})
+// const reducer = combineReducers({
+//     products: ProReducer,
+//     cartitem: cartReducer,
+//     wishlist: wishListReducer
+// })
 // const initialstate = {
 //     products: productlist,
 //     cartitem: [],
@@ -88,9 +89,16 @@ const reducer = combineReducers({
 // const ProductReducer = () => {
 
 
-    export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-    console.log(store);
+    // export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+    // console.log(store);
 
+    export const store = configureStore({
+        reducer : {
+            products: ProReducer,
+            cartItems: cartReducer,
+            wishList: wishListReducer,
+        },
+    })
 //     store.dispatch(addCartItem(1))
 //     store.dispatch(addCartItem(12))
 
